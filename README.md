@@ -1,4 +1,4 @@
-# Custom-ava-dataset-Multi-Person-Video-Dataset-Annotation-Method-of-Spatio-Temporally-Actions
+# Custom ava dataset, Custom Spatio Temporally Action Video Dataset
 Custom ava dataset, Multi-Person Video Dataset Annotation Method of Spatio-Temporally Actions <br>
 自定义ava数据集，多人视频的时空动作数据集标注方法
 # 1 Dataset‘s folder structure 数据集文件结构
@@ -19,17 +19,13 @@ Instance mirroring selection：Pytorch 1.8.0，python 3.8，CUDA 11.1.1 <br>
 # 3 数据集视频准备
 视频是从AVA数据集中随机选择了3个：
 ```python
-https://s3.amazonaws.com/ava-dataset/trainval/1ReZIMmD_8E.mp4
-https://s3.amazonaws.com/ava-dataset/trainval/_ithRWANKB0.mp4
 https://s3.amazonaws.com/ava-dataset/trainval/2DUITARAsWQ.mp4
-
 ```
 将视频下载到极链AI平台的镜像实例，代码如下：
  （如果速度慢了，可以现采用迅雷下载，然后上传）
 
 ```python
-cd /home
-mkdir -p ./Dataset/videos
+
 wget https://s3.amazonaws.com/ava-dataset/trainval/1ReZIMmD_8E.mp4 -O /home/Dataset/videos/1.mp4
 wget https://s3.amazonaws.com/ava-dataset/trainval/_ithRWANKB0.mp4 -O /home/Dataset/videos/2.mp4
 wget https://s3.amazonaws.com/ava-dataset/trainval/2DUITARAsWQ.mp4 -O /home/Dataset/videos/3.mp4
