@@ -1,0 +1,5 @@
+IN_DATA_DIR="/home/Dataset/videos"
+OUT_DATA_DIR="/home/Dataset/video_crop"
+ffmpeg -ss 1030 -t 11 -y -i "${IN_DATA_DIR}/1.mp4" "${OUT_DATA_DIR}/1.mp4"
+ffmpeg -ss 1340 -t 11 -y -i "${IN_DATA_DIR}/1.mp4" "${OUT_DATA_DIR}/2.mp4"
+ffmpeg -ss 1850 -t 11 -y -i "${IN_DATA_DIR}/1.mp4" "${OUT_DATA_DIR}/3.mp4"

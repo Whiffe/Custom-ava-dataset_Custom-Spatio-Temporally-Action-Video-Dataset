@@ -1,0 +1,10 @@
+# pip install -r requirements2.txt
+
+# base ----------------------------------------
+
+Pillow>=7.1.2
+PyYAML>=5.3.1
+
+# deep_sort -----------------------------------
+
+easydict
