@@ -30,6 +30,8 @@ for filepath,dirnames,filenames in os.walk(r'./frames'):
     for filename in filenames:
         if "checkpoint" in filename:
             continue
+        if "Store" in filename:
+            continue
         temp_num = filename.split('_')[1]
         temp_num = temp_num.split('.')[0]
         temp_num = int(temp_num)
