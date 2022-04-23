@@ -62,3 +62,19 @@ Execute the code under /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-
 cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset
 sh cut_video.sh
 ```
+![image](https://img-blog.csdnimg.cn/8e9b191bb72e41ee96b508ad0230a4e5.png)
+## 4.3 video frame 视频抽帧
+Referring to the ava dataset, crop 30 frames per second <br>
+参考ava数据集，每秒裁剪30帧<br>
+
+Execute the code under /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset:<br>
+在/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset 下执行：
+
+```python
+cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset
+bash cut_frames.sh 
+```
+![image](https://img-blog.csdnimg.cn/ff14789c0a3743e584ea11de15dfc517.png)
+![image](https://img-blog.csdnimg.cn/334197c4599e4a12ab594dd8133730a4.png)
+
+
