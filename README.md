@@ -173,3 +173,60 @@ python dense_proposals_train_to_via.py ./dense_proposals_train.pkl ../../Dataset
 The generated annotation files are saved in: /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/choose_frames_middle<br>
 生成的标注文件保存在：/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/choose_frames_middle中<br>
 ![image](https://img-blog.csdnimg.cn/0ad5591962b64fceb90f2a26a7fa98f1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_15,color_FFFFFF,t_70,g_se,x_16)
+## 7.3 Remove the default value of via 去掉via默认值
+标注时有默认值，这个会影响我们的标注，需要取消掉。<br>
+There is a default value when labeling, which will affect our labeling and needs to be canceled.<br>
+
+我尝试了很多次，想在生成via标注文件时，去掉标注选项中的默认值，但还是没有实现，那就在生成之后，直接对via的json文件进行操作，去掉默认值。<br>
+I have tried many times and want to remove the default value in the annotation option when generating the via annotation file, but it is still not implemented. Then after the generation, directly operate the via json file and remove the default value.<br>
+
+Execute the code under /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/:<br>
+在：/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/下运行<br>
+
+```python
+cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset
+python chang_via_json.py 
+```
+![image](https://img-blog.csdnimg.cn/de6866f0ef484a3ea909ce5bda598857.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_15,color_FFFFFF,t_70,g_se,x_16)
+
+## 7.5 Download choose_frames_middle and VIA annotation 下载choose_frames_middle与VIA标注
+Compress the choose_frames_middle file<br>
+对choose_frames_middle文件压缩<br>
+
+Execute the code under /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset: <br>
+在/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset中执行：<br>
+
+```python
+apt-get update
+apt-get install zip
+apt-get install unzip
+
+cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset
+zip -r choose_frames_middle.zip choose_frames_middle
+```
+Download choose_frames_middle.zip<br>
+下载：choose_frames_middle.zip<br>
+
+Then use via to label<br>
+然后使用via进行标注<br>
+
+via official website:[https://www.robots.ox.ac.uk/~vgg/software/via/](https://www.robots.ox.ac.uk/~vgg/software/via/)<br>
+via官网：[https://www.robots.ox.ac.uk/~vgg/software/via/](https://www.robots.ox.ac.uk/~vgg/software/via/)<br>
+
+via annotation tool download link: [https://www.robots.ox.ac.uk/~vgg/software/via/downloads/via3/via-3.0.11.zip](https://www.robots.ox.ac.uk/~vgg/software/via/downloads/via3/via-3.0.11.zip)<br>
+via标注工具下载链接：[https://www.robots.ox.ac.uk/~vgg/software/via/downloads/via3/via-3.0.11.zip](https://www.robots.ox.ac.uk/~vgg/software/via/downloads/via3/via-3.0.11.zip)<br>
+
+Click in the annotation tool: via_image_annotator.html<br>
+点击标注工具中的： via_image_annotator.html<br>
+
+![image](https://img-blog.csdnimg.cn/fec0e87d18ab48c2af8299791a1e71af.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_18,color_FFFFFF,t_70,g_se,x_16)
+
+The following picture is the interface of via, 1 represents adding pictures, 2 represents adding annotation files <br>
+下图是via的界面，1代表添加图片，2代表添加标注文件<br>
+
+![image](https://img-blog.csdnimg.cn/6c896dd36f284f2286867510c705a7de.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+Import the image, open the annotation file (note, open x_proposal_s.json), the final result:<br>
+下图是via的界面，1代表添加图片，2代表添加标注文件:<br>
+![image](https://img-blog.csdnimg.cn/ba44be0e5d454a2ba063e363b179daea.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
+
