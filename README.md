@@ -106,3 +106,20 @@ python choose_frames.py 10 0
 ```
 ![image](https://img-blog.csdnimg.cn/f5501f08cd7941c692b702f0af25f985.png)
 ![image](https://img-blog.csdnimg.cn/9041d1ad34ca435ebd67c2f3e1bce3c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_15,color_FFFFFF,t_70,g_se,x_16)
+
+# 5 yolov5 and deep sort installation. yolov5与deep sort 安装
+
+##  5.1 Install 安装
+run the following code<br>
+运行以下代码：<br>
+```
+cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort
+pip install -r requirements.txt
+pip install opencv-python-headless==4.1.2.30
+
+wget https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5s.pt -O /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/yolov5/yolov5s.pt 
+mkdir -p /root/.config/Ultralytics/
+wget  https://ultralytics.com/assets/Arial.ttf -O /root/.config/Ultralytics/Arial.ttf
+```
+The reason for using deep sort: In preparation for generating [train/val].csv, dense_proposals_[train/val/test].pkl will not use the detection results of deep sort.<br>
+采用deep sort的原因：为生成[train/val].csv做准备，dense_proposals_[train/val/test].pkl不会用到deep sort的检测结果。<br>
