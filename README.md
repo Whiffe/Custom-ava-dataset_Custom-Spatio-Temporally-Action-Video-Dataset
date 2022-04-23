@@ -1,11 +1,20 @@
 # Custom ava dataset, Custom Spatio Temporally Action Video Dataset
 Custom ava dataset, Multi-Person Video Dataset Annotation Method of Spatio-Temporally Actions <br>
-自定义ava数据集，多人视频的时空动作数据集标注方法
+自定义ava数据集，多人视频的时空动作数据集标注方法 <br>
+
+ava dataset paper: [https://arxiv.org/pdf/1705.08421.pdf](https://arxiv.org/pdf/1705.08421.pdf) <br>
+ava数据集论文：[https://arxiv.org/pdf/1705.08421.pdf](https://arxiv.org/pdf/1705.08421.pdf) <br>
+
+下面是我在CSDN、知乎、B站的同步内容：<br>
+CSDN：<br>
+知乎：<br>
+B站：<br>
+
 # 1 Dataset‘s folder structure 数据集文件结构
 
 ![image](https://github.com/Whiffe/Custom-ava-dataset_Multi-Person-Video-Dataset-Annotation-Method-of-Spatio-Temporally-Actions/blob/95307633663fa3103a46de75220aabf1174013ca/images/DatasetFolderStructure.png)
 
-# 2 AI platform AI平台
+# 2 AI platform and project download.  AI平台与项目下载
 The AI platform I use is: [https://cloud.videojj.com/auth/register?inviter=18452&activityChannel=student_invite](https://cloud.videojj.com/auth/register?inviter=18452&activityChannel=student_invite) <br>
 我使用的AI平台：[https://cloud.videojj.com/auth/register?inviter=18452&activityChannel=student_invite](https://cloud.videojj.com/auth/register?inviter=18452&activityChannel=student_invite)
 
