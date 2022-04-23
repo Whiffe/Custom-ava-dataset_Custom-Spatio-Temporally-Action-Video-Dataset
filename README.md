@@ -227,6 +227,6 @@ The following picture is the interface of via, 1 represents adding pictures, 2 r
 ![image](https://img-blog.csdnimg.cn/6c896dd36f284f2286867510c705a7de.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
 
 Import the image, open the annotation file (note, open x_proposal_s.json), the final result:<br>
-下图是via的界面，1代表添加图片，2代表添加标注文件:<br>
+导入图片，打开标注文件（注意，打开x_proposal_s.json），最后结果：<br>
 ![image](https://img-blog.csdnimg.cn/ba44be0e5d454a2ba063e363b179daea.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
 
