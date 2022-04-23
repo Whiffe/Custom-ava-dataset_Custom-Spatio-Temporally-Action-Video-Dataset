@@ -104,4 +104,5 @@ Execute the code under /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-
 cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset 
 python choose_frames.py 10 0
 ```
-
+![image](https://img-blog.csdnimg.cn/f5501f08cd7941c692b702f0af25f985.png)
+![image](https://img-blog.csdnimg.cn/9041d1ad34ca435ebd67c2f3e1bce3c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_15,color_FFFFFF,t_70,g_se,x_16)
