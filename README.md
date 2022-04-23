@@ -92,7 +92,8 @@ cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Datase
 python choose_frames_all.py 10 0
 ```
 In the above code, 10 represents the length of the video, and 0 represents the start from the 0th second.<br>
-其中10代表视频长度，0代表从第0秒开始
+其中10代表视频长度，0代表从第0秒开始 <br>
+![image](https://img-blog.csdnimg.cn/8fbb68efa7ac407db1317b1e5d202753.png)
 
 ## 4.5 Not consolidate and downscale frames 不整合的缩减帧
 The consolidate and downscale frames in 4.4 is for the detection of yolov5, and not consolidate and downscale frames here is for the labeling of VIA.
