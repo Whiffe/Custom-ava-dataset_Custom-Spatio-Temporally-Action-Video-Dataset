@@ -26,11 +26,12 @@ for filepath,dirnames,filenames in os.walk(r'./frames'):
     #找到指定的图片，然后移动到choose_frames中对应的文件夹下
     temp_name = filepath.split('/')[-1]
     for filename in filenames:
-        if "checkpoint" or "Store" in filename:
+        if "checkpoint" in filename:
+            continue
+        if "Store" in filename:
             continue
         temp_num = filename.split('_')[1]
         temp_num = temp_num.split('.')[0]
-        print("temp_num:",temp_num)
         temp_num = int(temp_num)
         if temp_num in num_frames:
             temp_num = str(temp_num)
