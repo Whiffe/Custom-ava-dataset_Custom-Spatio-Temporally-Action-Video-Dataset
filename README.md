@@ -123,3 +123,25 @@ wget  https://ultralytics.com/assets/Arial.ttf -O /root/.config/Ultralytics/Aria
 ```
 The reason for using deep sort: In preparation for generating [train/val].csv, dense_proposals_[train/val/test].pkl will not use the detection results of deep sort.<br>
 采用deep sort的原因：为生成[train/val].csv做准备，dense_proposals_[train/val/test].pkl不会用到deep sort的检测结果。<br>
+
+## 5.2 Detect choose_frames_all 对choose_frames_all进行检测
+
+
+```python
+cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort
+python ./yolov5/detect.py --source ../Dataset/choose_frames_all/ --save-txt --save-conf 
+```
+The result is stored in: /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/yolov5/runs/detect/exp <br>
+结果存储在：/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/yolov5/runs/detect/exp <br>
+
+![image](https://img-blog.csdnimg.cn/f92b6d91cfb94eb0866ac37704f3d888.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+# 6 Generate dense_proposals_train.pkl 生成dense_proposals_train.pkl
+
+Execute the code under /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/mywork：
+在 /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/mywork下运行：
+
+```python
+cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/mywork
+python dense_proposals_train.py ../yolov5/runs/detect/exp/labels ./dense_proposals_train.pkl show
+```
