@@ -729,6 +729,11 @@ cd /home/mmaction2
 python tools/train.py configs/detection/ava/my_slowfast_kinetics_pretrained_r50_4x16x1_20e_ava_rgb.py --validate
 
 ```
+![image](https://img-blog.csdnimg.cn/296943c198974c27ae1338bc28647663.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+The weights after training are:<br>
+训练后的权重在：home/mmaction2/work_dirs/ava/slowfast_kinetics_pretrained_r50_4x16x1_20e_ava_rgb：<br>
+![image](https://img-blog.csdnimg.cn/296943c198974c27ae1338bc28647663.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
 
 ## 13.3 Test 测试
 First, create a new label_map<br>
