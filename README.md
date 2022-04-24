@@ -139,10 +139,9 @@ The result is stored in: /home/Custom-ava-dataset_Custom-Spatio-Temporally-Actio
 
 ![image](https://img-blog.csdnimg.cn/f92b6d91cfb94eb0866ac37704f3d888.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-# 6 Generate dense_proposals_train.pkl 生成dense_proposals_train.pkl
+# 6 Generate dense_proposals_train.pkl
 
 Execute the code under /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/mywork：
-在 /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/mywork下运行：
 
 ```python
 cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/mywork
