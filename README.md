@@ -469,12 +469,6 @@ for example:<br>
  
 original name 原本的名字：rawframes/1/1_000001.jpg<br>
 target name 目标名字：rawframes/1/img_00001.jpg<br>
-  
-```python
-cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/mywork/
-python change_raw_frames.py
-```
-
 
 ```python
 cp -r /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/frames/* /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/rawframes
