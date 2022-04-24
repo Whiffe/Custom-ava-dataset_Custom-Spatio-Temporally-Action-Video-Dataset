@@ -338,8 +338,8 @@ Execute the code under:/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-
 cd  /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/
 python train_temp.py
 ```
-The result is in home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/train_temp.csv<br>
-最后结果：home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/train_temp.csv<br>
+The result is in /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/train_temp.csv<br>
+最后结果：/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/train_temp.csv<br>
   
 ![image](https://img-blog.csdnimg.cn/4848fc08ff974d9e82421b98ffd90cdf.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
 
@@ -357,3 +357,7 @@ Execute the code under:/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-
 cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/
 python train.py
 ```
+The result is in：/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations/train.csv<br>
+结果在：/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations/train.csv<br>
+  
+![image](https://img-blog.csdnimg.cn/d06308d6bd4b4d9eaf5eb7afec60e676.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
