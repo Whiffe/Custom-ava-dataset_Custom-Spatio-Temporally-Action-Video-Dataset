@@ -468,3 +468,13 @@ target name 目标名字：rawframes/1/img_00001.jpg<br>
 cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/mywork/
 python change_raw_frames.py
 ```
+
+
+```python
+cp -r /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/frames/* /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/rawframes
+cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/mywork/
+python change_raw_frames.py
+```
+![image](https://img-blog.csdnimg.cn/8f5e87a194234453b10d5b4cee9e309d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_14,color_FFFFFF,t_70,g_se,x_16)
+
+# 13 Annotation file correction. 标注文件修正
