@@ -300,3 +300,60 @@ Next use deep sort to associate the human's ID<br>
   
 Send the image and the boundding box detected by yolov5 to deep sort for detection<br>
 将图片与yolov5检测出来的坐标，送入deep sort进行检测<br>
+
+Execute the code under /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/：<br>
+在/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/执行命令如下：<br>
+
+```python
+cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/
+wget https://drive.google.com/drive/folders/1xhG0kRH1EX5B9_Iz8gQJb7UNnn_riXi6 -O ./deep_sort_pytorch/deep_sort/deep/checkpoint/ckpt.t7 
+python yolov5_to_deepsort.py --source /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/frames
+```
+ckpt.t7 can be downloaded separately and then uploaded to the AI platform<br>
+ckpt.t7 可以单独下载后上传AI平台br<>
+
+The result is in: /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/train_personID.csv, as shown below<br>
+结果在：/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/train_personID.csv，如下图<br>
+![image](https://img-blog.csdnimg.cn/7b82691f98c040cc8f805a5a0f027aa0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
+  
+## 9.2 Fusion of actions and personID 融合actions与personID
+There are already 2 files:<br>
+目前已经有2个文件了：<br>
+  
+1，train_personID.csv<br>
+Include: boundding box, personID<br>
+包含 坐标、personID<br>
+  
+2，train_without_personID.csv<br>
+Include: boundding box, actions<br>
+包含 坐标、actions<br>
+  
+So now we need to put the two together<br>
+所以现在需要将两者拼在一起<br>
+ 
+Execute the code under:/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/<br>
+在/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/下执行<br>
+
+```python
+cd  /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/
+python train_temp.py
+```
+The result is in home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/train_temp.csv<br>
+最后结果：home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/train_temp.csv<br>
+  
+![image](https://img-blog.csdnimg.cn/4848fc08ff974d9e82421b98ffd90cdf.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+After the operation, you will find that some IDs are -1. These -1s are data that deepsort has not detected. The reason is that people appear for the first time or the appearance time is too short, and deepsort does not detect IDs.<br>
+运行结束后，会发现有些ID是-1，这些-1是deepsort未检测出来的数据，原因是人首次出现或者出现时间过短，deepsort未检测出ID。<br>
+  
+## 9.3 Fix ava_train_temp.csv 修正ava_train_temp.csv
+For the case where -1 exists in train_temp.csv, it needs to be corrected<br>
+针对train_temp.csv中存在-1的情况，需要进行修正<br>
+
+Execute the code under:/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/<br>
+在/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/下执行<br>
+
+```python
+cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/
+python train.py
+```
