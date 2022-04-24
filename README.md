@@ -293,3 +293,10 @@ train_without_personID.csv<br>
 
 Since deepsort needs to send 2 frames of pictures in advance, and then can label the person's ID from the third frame, dense_proposals_train.pkl starts from the third frame (that is, 0, 1 are missing), so 0, 1 need to be added.<br>
 由于deepsort需要提前送入2帧图片，然后才能从第三帧开始标注人的ID，dense_proposals_train.pkl是从第三张开始的（即缺失了0，1），所以需要将0，1添加<br>
+  
+
+Next use deep sort to associate the human's ID<br>
+接下来使用deep sort来关联人的ID<br>
+  
+Send the image and the boundding box detected by yolov5 to deep sort for detection<br>
+将图片与yolov5检测出来的坐标，送入deep sort进行检测<br>
