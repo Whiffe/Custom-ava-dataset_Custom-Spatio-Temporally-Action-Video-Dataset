@@ -5,8 +5,7 @@ Custom ava dataset, Multi-Person Video Dataset Annotation Method of Spatio-Tempo
 My paper in arxiv::[A Multi-Person Video Dataset Annotation Method of
 Spatio-Temporally Actions](https://arxiv.org/pdf/2204.10160.pdf)<br>
 
-ava dataset paper: [https://arxiv.org/pdf/1705.08421.pdf](https://arxiv.org/pdf/1705.08421.pdf) <br>
-ava数据集论文：[https://arxiv.org/pdf/1705.08421.pdf](https://arxiv.org/pdf/1705.08421.pdf) <br>
+AVA paper：[https://arxiv.org/pdf/1705.08421.pdf](https://arxiv.org/pdf/1705.08421.pdf) <br>
 
 下面是我在CSDN、知乎、B站的同步内容：<br>
 CSDN：<br>
