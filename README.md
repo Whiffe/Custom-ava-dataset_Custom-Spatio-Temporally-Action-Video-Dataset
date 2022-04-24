@@ -237,7 +237,7 @@ After action annotation, the annotation information of via is saved as a json fi
 These information are required for the annotation file, and the information in the json file needs to be integrated. This section is to integrate the information in the via.<br>
 这些信息都是标注文件所需要的，需要把json文件中的信息整合，这一节就是对via中信息做整合。<br>
 
-## 7.1 ava_train
+## 8.1 ava_train
 The following figure is the ava annotation file (ava_train.csv)<br>
 下图是ava标注文件（ava_train.csv）<br>
 
@@ -260,12 +260,13 @@ Column 8: Person's ID<br>
 At present, there is no ID of the last column in our data, and everything else is generated, so let's extract this information first.<nr>
 目前，我们的数据中没有最后一列的ID，其它都生成了，所以我们先将这些信息提取出来。<br>
   
-## 7.2 Analysis of via Json file. via Json 解析
+## 8.2 Analysis of via Json file. via Json 解析
 
-Parse the json parsing website using the runoob platform: [https://c.runoob.com/front-end/53/](https://c.runoob.com/front-end/53/)
-解析使用菜鸟平台的json解析网站：[https://c.runoob.com/front-end/53/](https://c.runoob.com/front-end/53/)
+Parse the json parsing website using the runoob platform: [https://c.runoob.com/front-end/53/](https://c.runoob.com/front-end/53/)<br>
+解析使用菜鸟平台的json解析网站：[https://c.runoob.com/front-end/53/](https://c.runoob.com/front-end/53/)<br>
 
-
+![image](https://img-blog.csdnimg.cn/de1fbd11744749748d2ac8c0e4611a99.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_10,color_FFFFFF,t_70,g_se,x_16)
+![image](https://img-blog.csdnimg.cn/ac088d5de8ff4e179e673e658d90b9fd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_10,color_FFFFFF,t_70,g_se,x_16)
 
   
   
