@@ -1,9 +1,10 @@
 import os
-for root, dirs, files in os.walk("/home/Dataset/rawframes", topdown=False):
+for root, dirs, files in os.walk("../../Dataset/rawframes", topdown=False):
     for name in files:
         if 'checkpoint' in name:
             continue
-            
+        if "Store" in name:
+            continue
         oldNamePath = os.path.join(root, name)
         
         tempName1 = name.split('_')[1] # 44_000054.jpg -> 000054.jpg
