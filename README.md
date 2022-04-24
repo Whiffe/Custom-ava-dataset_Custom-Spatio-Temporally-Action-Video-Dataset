@@ -740,7 +740,7 @@ First, create a new label_map<br>
 首先，创建新的label_map<br>
 
 ```python
-cd /home/mmaction2/tools/data/ava
+cd /home/mmaction2_YF/tools/data/ava
 touch label_map2.txt
 ```
 The content of label_map2.txt is as follows:<br>
@@ -759,7 +759,7 @@ Then run: <br>
 然后运行：<br>
 
 ```python
-cd /home/mmaction2
+cd /home/mmaction2_YF
 python demo/demo_spatiotemporal_det.py --config configs/detection/ava/my_slowfast_kinetics_pretrained_r50_4x16x1_20e_ava_rgb.py --checkpoint /home/mmaction2/work_dirs/ava/slowfast_kinetics_pretrained_r50_4x16x1_20e_ava_rgb/best_mAP@0.5IOU_epoch_18.pth --det-config demo/faster_rcnn_r50_fpn_2x_coco.py  --det-checkpoint Checkpionts/mmdetection/faster_rcnn_r50_fpn_2x_coco_bbox_mAP-0.384_20200504_210434-a5d8aa15.pth   --video /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/video_crop/1.mp4  --out-filename demo/det_1.mp4   --det-score-thr 0.5 --action-score-thr 0.5 --output-stepsize 4  --output-fps 6 --label-map tools/data/ava/label_map2.txt
 ```
 where best_mAP@0.5IOU_epoch_47.pth is the weight after training, and 441.mp4 is the video uploaded by yourself<br>
