@@ -76,7 +76,7 @@ for index in range(len(train_temp)):
         # 经过 update_ava_train_temp 后，data[-1]为‘-1’对应的坐标的ID赋予maxID+1，那么最高值也要+1
         maxId = maxId + 1
         
-with open('./train.csv',"w") as csvfile: 
+with open('./annotations/train.csv',"w") as csvfile: 
     writer = csv.writer(csvfile)
     writer.writerows(train_temp)
    
