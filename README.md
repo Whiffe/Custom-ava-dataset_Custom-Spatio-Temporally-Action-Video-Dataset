@@ -363,5 +363,75 @@ The result is in：/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Vide
 ![image](https://img-blog.csdnimg.cn/d06308d6bd4b4d9eaf5eb7afec60e676.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
   
 # 10 Generation of other annotation files 其它标注文件的生成
+## 10.1 train_excluded_timestamps.csv
 I spent almost 85% of the content talking about the method of ava_train.csv, and the generation method of the rest of the annotation files is relatively simple<br>
 我几乎花了85%的内容说了ava_train.csv的方法，其余的标注文件的生成方法相对较为简单<br>
+  
+```python
+cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations
+touch train_excluded_timestamps.csv
+```
+  
+## 10.2 included_timestamps.txt
+
+```python
+cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations
+touch included_timestamps.txt
+```
+  
+Then in included_timestamps.txt write:<br>
+然后在included_timestamps.txt 中写入<br>
+  
+```python
+02
+03
+04
+05
+06
+07
+08
+```
+  
+
+## 10.3 action_list.pbtxt
+```python
+cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations
+touch action_list.pbtxt
+```
+
+```python
+item {
+  name: "talk"
+  id: 1
+}
+item {
+  name: "bow"
+  id: 2
+}
+item {
+  name: "stand"
+  id: 3
+}
+item {
+  name: "sit"
+  id: 4
+}
+item {
+  name: "walk"
+  id: 5
+}
+item {
+  name: "hand up"
+  id: 6
+}
+item {
+  name: "catch"
+  id: 7
+}
+
+```
+## 10.4 dense_proposals_train.pkl
+
+```python
+cp /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/mywork/dense_proposals_train.pkl //home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations
+```
