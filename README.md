@@ -230,3 +230,45 @@ Import the image, open the annotation file (note, open x_proposal_s.json), the f
 导入图片，打开标注文件（注意，打开x_proposal_s.json），最后结果：<br>
 ![image](https://img-blog.csdnimg.cn/ba44be0e5d454a2ba063e363b179daea.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
 
+# 8 Extraction of via annotation information. via标注信息的提取
+After action annotation, the annotation information of via is saved as a json file. The json file contains: the name of the video, the number of the video frame, the boundding box of the human, and the number of the action category.<br>
+经过动作标注，via的标注信息保存为json文件，json文件中包含：视频的名字、视频帧的编号、人的坐标值、动作类别编号<br>
+
+These information are required for the annotation file, and the information in the json file needs to be integrated. This section is to integrate the information in the via.<br>
+这些信息都是标注文件所需要的，需要把json文件中的信息整合，这一节就是对via中信息做整合。<br>
+
+## 7.1 ava_train
+The following figure is the ava annotation file (ava_train.csv)<br>
+下图是ava标注文件（ava_train.csv）<br>
+
+![image](https://img-blog.csdnimg.cn/0af268f7e8a94fda87dfc75797ee38da.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
+Column 1: The name of the video<br>
+第一列：视频的名字<br>
+
+Column 2: the video frame ID, for example, the frame at 15:02 is expressed as 902, and the frame at 15:03 is expressed as 903<br>
+第二列：视频帧ID，比如15:02这一帧，表示为902，15:03这一帧表示为903<br>
+
+Column 3-6: the boundding box of the human (x1, y1, x2, y2)<br>
+第三列到第六列： 人的坐标值（x1，y1，x2，y2）<br>
+
+Column 7: Action category number<br>
+第七列：动作类别编号<br>
+
+Column 8: Person's ID<br>
+第八列：人的ID<br>
+
+At present, there is no ID of the last column in our data, and everything else is generated, so let's extract this information first.<nr>
+目前，我们的数据中没有最后一列的ID，其它都生成了，所以我们先将这些信息提取出来。<br>
+  
+## 7.2 Analysis of via Json file. via Json 解析
+
+Parse the json parsing website using the runoob platform: [https://c.runoob.com/front-end/53/](https://c.runoob.com/front-end/53/)
+解析使用菜鸟平台的json解析网站：[https://c.runoob.com/front-end/53/](https://c.runoob.com/front-end/53/)
+
+
+
+  
+  
+  
+  
+  
