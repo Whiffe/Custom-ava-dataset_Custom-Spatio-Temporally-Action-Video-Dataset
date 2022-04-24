@@ -287,3 +287,9 @@ train_without_personID.csv <br>
 会在/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/下生成：<br>
 train_without_personID.csv<br>
 ![image](https://img-blog.csdnimg.cn/c67fa6d19d3643acbcb2be835c121f85.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
+  
+# 9 deep sort
+## 9.1 dense_proposals_train_deepsort.py
+
+Since deepsort needs to send 2 frames of pictures in advance, and then can label the person's ID from the third frame, dense_proposals_train.pkl starts from the third frame (that is, 0, 1 are missing), so 0, 1 need to be added.<br>
+由于deepsort需要提前送入2帧图片，然后才能从第三帧开始标注人的ID，dense_proposals_train.pkl是从第三张开始的（即缺失了0，1），所以需要将0，1添加<br>
