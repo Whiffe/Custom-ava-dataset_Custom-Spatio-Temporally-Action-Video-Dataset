@@ -760,7 +760,7 @@ Then run: <br>
 
 ```python
 cd /home/mmaction2
-python demo/demo_spatiotemporal_det.py --config configs/detection/ava/my_slowfast_kinetics_pretrained_r50_4x16x1_20e_ava_rgb.py --checkpoint /home/mmaction2/work_dirs/ava/slowfast_kinetics_pretrained_r50_4x16x1_20e_ava_rgb/best_mAP@0.5IOU_epoch_47.pth --det-config demo/faster_rcnn_r50_fpn_2x_coco.py  --det-checkpoint Checkpionts/mmdetection/faster_rcnn_r50_fpn_2x_coco_bbox_mAP-0.384_20200504_210434-a5d8aa15.pth   --video /home/videoData/cut_videos/441.mp4  --out-filename demo/stdet_442.mp4   --det-score-thr 0.5 --action-score-thr 0.5 --output-stepsize 4  --output-fps 6 --label-map tools/data/ava/label_map2.txt
+python demo/demo_spatiotemporal_det.py --config configs/detection/ava/my_slowfast_kinetics_pretrained_r50_4x16x1_20e_ava_rgb.py --checkpoint /home/mmaction2/work_dirs/ava/slowfast_kinetics_pretrained_r50_4x16x1_20e_ava_rgb/best_mAP@0.5IOU_epoch_47.pth --det-config demo/faster_rcnn_r50_fpn_2x_coco.py  --det-checkpoint Checkpionts/mmdetection/faster_rcnn_r50_fpn_2x_coco_bbox_mAP-0.384_20200504_210434-a5d8aa15.pth   --video /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/video_crop/1.mp4  --out-filename demo/det_1.mp4   --det-score-thr 0.5 --action-score-thr 0.5 --output-stepsize 4  --output-fps 6 --label-map tools/data/ava/label_map2.txt
 ```
 where best_mAP@0.5IOU_epoch_47.pth is the weight after training, and 441.mp4 is the video uploaded by yourself<br>
 其中 best_mAP@0.5IOU_epoch_47.pth 是训练后的权重，441.mp4是自己上传的视频<br>
