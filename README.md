@@ -361,3 +361,7 @@ The result is in：/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Vide
 结果在：/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations/train.csv<br>
   
 ![image](https://img-blog.csdnimg.cn/d06308d6bd4b4d9eaf5eb7afec60e676.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
+  
+# 10 Generation of other annotation files 其它标注文件的生成
+I spent almost 85% of the content talking about the method of ava_train.csv, and the generation method of the rest of the annotation files is relatively simple<br>
+我几乎花了85%的内容说了ava_train.csv的方法，其余的标注文件的生成方法相对较为简单<br>
