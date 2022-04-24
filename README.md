@@ -269,7 +269,21 @@ Parse the json parsing website using the runoob platform: [https://c.runoob.com/
 ![image](https://img-blog.csdnimg.cn/ac088d5de8ff4e179e673e658d90b9fd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_10,color_FFFFFF,t_70,g_se,x_16)
 
   
+## 8.3 Extract the uploaded json file. 提取上传标注完成的json文件
+
+这里需要注意的是，我给每个标注完成的文件取名：视频名_finish.json，如视频1，标注完成后的名字为：1_finish.json<br>  
+It should be noted here that I named the labeled file: video_name_finish.json, such as video 1, the marked name is: 1_finish.json<br>
+![image](https://img-blog.csdnimg.cn/77fb16c7c221404db9544d76206ce7e1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_15,color_FFFFFF,t_70,g_se,x_16)
   
-  
-  
-  
+
+Execute the code under /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset: <br>
+在/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset中执行：<br>
+```python
+cd  /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/
+python json_extract.py
+```
+It will be generated under /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/:<br>
+train_without_personID.csv <br>
+会在/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/下生成：<br>
+train_without_personID.csv<br>
+![image](https://img-blog.csdnimg.cn/c67fa6d19d3643acbcb2be835c121f85.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
