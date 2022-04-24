@@ -496,7 +496,7 @@ python change_dense_proposals_val.py
 ```python
 cd /home
 
-git clone https://gitee.com/YFwinston/mmaction2.git
+git clone https://gitee.com/YFwinston/mmaction2_YF.git
 
 pip install mmcv-full==1.3.17 -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.8.0/index.html
 
@@ -504,7 +504,7 @@ pip install opencv-python-headless==4.1.2.30
 
 pip install moviepy
 
-cd mmaction2
+cd mmaction2_YF
 pip install -r requirements/build.txt
 pip install -v -e .
 mkdir -p ./data/ava
@@ -515,7 +515,7 @@ cd mmdetection
 pip install -r requirements/build.txt
 pip install -v -e .
 
-cd ../mmaction2
+cd ../mmaction2_YF
 
 wget https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50_fpn_2x_coco/faster_rcnn_r50_fpn_2x_coco_bbox_mAP-0.384_20200504_210434-a5d8aa15.pth -P ./Checkpionts/mmdetection/
 
@@ -525,10 +525,10 @@ wget https://download.openmmlab.com/mmaction/recognition/slowfast/slowfast_r50_8
 # 15 Train and Test 训练与测试
 ## 15.1 configuration file 配置文件
 Create my_slowfast_kinetics_pretrained_r50_4x16x1_20e_ava_rgb.py under /mmaction2/configs/detection/ava/<br>
-在 /mmaction2/configs/detection/ava/下创建 my_slowfast_kinetics_pretrained_r50_4x16x1_20e_ava_rgb.py<br>
+在 /mmaction2_YF/configs/detection/ava/下创建 my_slowfast_kinetics_pretrained_r50_4x16x1_20e_ava_rgb.py<br>
 
 ```python
-cd /home/mmaction2/configs/detection/ava/
+cd /home/mmaction2_YF/configs/detection/ava/
 touch my_slowfast_kinetics_pretrained_r50_4x16x1_20e_ava_rgb.py
 ```
   
@@ -725,7 +725,7 @@ find_unused_parameters = False
 ## 13.2 训练
 
 ```python
-cd /home/mmaction2
+cd /home/mmaction2_YF
 python tools/train.py configs/detection/ava/my_slowfast_kinetics_pretrained_r50_4x16x1_20e_ava_rgb.py --validate
 
 ```
