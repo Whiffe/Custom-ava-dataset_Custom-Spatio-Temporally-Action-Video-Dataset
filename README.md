@@ -435,3 +435,36 @@ item {
 ```python
 cp /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/mywork/dense_proposals_train.pkl //home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations
 ```
+# 11 val file generation. val文件的生成
+我只是做一个样例，所以我就把train与val设置为一样的<br>
+I'm just doing a sample, so I set train and val to be the same<br>
+
+## 11.1 dense_proposals_val.pkl
+
+```python
+cp /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations/dense_proposals_train.pkl /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations/dense_proposals_val.pkl
+```
+## 11.2 val.csv
+
+```python
+cp /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations/train.csv /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations/val.csv
+```
+## 11.3 train_excluded_timestamps.csv
+```python
+cp /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations/train_excluded_timestamps.csv /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/Dataset/annotations/val_excluded_timestamps.csv
+```
+  
+# 12 rawframes
+In the name of the video frame, there is a problem that the name of the video frame does not match the training, so it is necessary to modify the name of the picture in /home/Dataset/frames<br>
+在取名上，裁剪的视频帧存在与训练不匹配的问题，所以需要对/home/Dataset/frames中的图片进行名字修改<br>
+
+for example:<br>
+例如:<br>
+ 
+original name 原本的名字：rawframes/1/1_000001.jpg<br>
+target name 目标名字：rawframes/1/img_00001.jpg<br>
+  
+```python
+cd /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/yolovDeepsort/mywork/
+python change_raw_frames.py
+```
