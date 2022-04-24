@@ -2,7 +2,7 @@ import pickle
 import numpy as np
 import csv
 
-f = open('/home/Dataset/annotations/dense_proposals_val.pkl','rb')
+f = open('../../Dataset/annotations/dense_proposals_val.pkl','rb')
 info = pickle.load(f, encoding='iso-8859-1') 
 dense_proposals_val = {}
 
@@ -20,5 +20,5 @@ for i in info:
         dicts.append(temp)
     dense_proposals_val[i] = np.array(dicts)
 # 保存为pkl文件
-with open('/home/Dataset/annotations/dense_proposals_val.pkl',"wb") as pklfile: 
+with open('../../Dataset/annotations/dense_proposals_val.pkl',"wb") as pklfile: 
     pickle.dump(dense_proposals_val, pklfile)
