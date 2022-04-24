@@ -764,3 +764,17 @@ python demo/demo_spatiotemporal_det.py --config configs/detection/ava/my_slowfas
 ```
 where best_mAP@0.5IOU_epoch_47.pth is the weight after training, and 441.mp4 is the video uploaded by yourself<br>
 其中 best_mAP@0.5IOU_epoch_47.pth 是训练后的权重，441.mp4是自己上传的视频<br>
+
+The detection result is in: /home/mmaction2/demo/det_1.mp4<br>
+检测结果在：/home/mmaction2/demo/det_1.mp4<br>
+![image](https://img-blog.csdnimg.cn/ba457d7f76424f5fb6d502cd39fb8185.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ1Yt5p2o5biG,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+
+The test results are not good for two reasons:<br>
+检测结果不好，原因有两个：<br>
+  
+1. The dataset is very small
+1，数据集非常小
+
+2. Almost 90% of the labels are stand, causing imbalance
+2，几乎90%的标注为stand，造成了不平衡
