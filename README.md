@@ -10,7 +10,7 @@ AVA paper：[https://arxiv.org/pdf/1705.08421.pdf](https://arxiv.org/pdf/1705.08
 下面是我在CSDN、知乎、B站的同步内容：<br>
 CSDN：[https://blog.csdn.net/WhiffeYF/article/details/124358725](https://blog.csdn.net/WhiffeYF/article/details/124358725)<br>
 知乎：[https://zhuanlan.zhihu.com/p/503031957](https://zhuanlan.zhihu.com/p/503031957 ) <br>
-B站：<br>
+B站：[https://www.bilibili.com/video/BV1j3411M7Ba/](https://www.bilibili.com/video/BV1j3411M7Ba/)<br>
 
 # 1 Dataset‘s folder structure 数据集文件结构
 
