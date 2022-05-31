@@ -5,6 +5,14 @@ from collections import defaultdict
 import os
 import cv2
 import sys
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('--yoloLabel_dir', default='./chooseVideoFrameYolov5/exp/labels',type=str, help="Label path for yolov5")
+parser.add_argument('--image_dir', default='./chooseVideoFrame',type=str, help="Path of video frames")
+
+arg = parser.parse_args()
 
 #坐标格式转化 xywh代表：中心点与宽长，xyxy代表左上角点与右下角点
 def xywh2xyxy(x):
@@ -16,24 +24,14 @@ def xywh2xyxy(x):
     y[:, 3] = x[:, 1] + x[:, 3] / 2  # bottom right y
     return y
 
-
-#传参 yolov5的检测结果 ./chooseVideoFrameYolov5/exp/labels
-yoloLabelPath = sys.argv[1]
-#yoloLabelPath = './chooseVideoFrameYolov5/exp/labels'
-
-
-#传参 图片的位置 ./chooseVideoFrame
-image_path = sys.argv[2]
-#image_path = './chooseVideoFrame'
-
 #最后的via产生的标注文件
-viaDetectionPath = image_path + '/' + 'detection.json'
+viaDetectionPath = arg.image_dir + '/' + 'detection.json'
 
 via3 = Via3Json(viaDetectionPath, mode='dump')
 
 #计数有多少图片（即标注文件数量）
 num_images = 0
-for root, dirs, files in os.walk(image_path, topdown=False):
+for root, dirs, files in os.walk(arg.image_dir, topdown=False):
     for name in files:
         if 'checkpoint' not in name:
             if 'jpg' in name:
@@ -47,7 +45,7 @@ files_dict,  metadatas_dict = {},{}
 
 #图片ID从1开始计算
 image_id = 1
-for root, dirs, files in os.walk(yoloLabelPath, topdown=False):
+for root, dirs, files in os.walk(arg.yoloLabel_dir, topdown=False):
     for name in files:
         if 'txt' in name and 'checkpoint' not in name:
 
