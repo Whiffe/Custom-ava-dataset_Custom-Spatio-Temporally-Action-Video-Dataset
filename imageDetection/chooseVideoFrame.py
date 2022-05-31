@@ -7,8 +7,13 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('--seconds', default=15,type=int, help="Length of video, seconds")
 parser.add_argument('--frames_dir', default='../Dataset/frames',type=str, help="The path of all video frames")
+parser.add_argument('--chooseFrame_dir', default='./chooseVideoFrame/',type=str, help="The path where the selected image is stored")
 
 arg = parser.parse_args()
+
+#如果chooseFrame_dir对应的目录不存在，则创建
+if not os.path.exists(arg.chooseFrame_dir):
+    os.mkdir(arg.chooseFrame_dir)
 
 #选取视频中间的一帧
 chooseSecond = int(arg.seconds/2)
@@ -27,7 +32,7 @@ for filepath,dirnames,filenames in os.walk(arg.frames_dir):
     for filename in filenames:
         if str(chooseSecond*30+1) in filename:
             srcfile = filepath + '/' + filename
-            dstpath = './chooseVideoFrame/' + filename
+            dstpath = arg.chooseFrame_dir + filename
             # 复制文件
             shutil.copy(srcfile, dstpath)
             print(filename)
