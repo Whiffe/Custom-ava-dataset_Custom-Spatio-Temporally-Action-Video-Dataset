@@ -24,7 +24,7 @@ def xywh2xyxy(x):
     y[:, 3] = x[:, 1] + x[:, 3] / 2  # bottom right y
     return y
 
-#最后的via产生的标注文件
+#最后的via产生的标注文件，viaDetectionPath为存放标注文件的路径
 viaDetectionPath = arg.image_dir + '/' + 'detection.json'
 
 via3 = Via3Json(viaDetectionPath, mode='dump')
@@ -36,6 +36,7 @@ for root, dirs, files in os.walk(arg.image_dir, topdown=False):
         if 'checkpoint' not in name:
             if 'jpg' in name:
                 num_images = num_images + 1
+
 attributes_dict = {}
 vid_list = list(map(str,range(1, num_images+1)))
 via3.dumpPrejects(vid_list)
@@ -45,6 +46,8 @@ files_dict,  metadatas_dict = {},{}
 
 #图片ID从1开始计算
 image_id = 1
+
+#循环遍历yolov5的检测标签
 for root, dirs, files in os.walk(arg.yoloLabel_dir, topdown=False):
     for name in files:
         if 'txt' in name and 'checkpoint' not in name:
@@ -53,14 +56,10 @@ for root, dirs, files in os.walk(arg.yoloLabel_dir, topdown=False):
             txtInfo=open(os.path.join(root, name))
             txtInfoLines = txtInfo.readlines() 
             
-            
-            
-            # 标注文件对应的图片
+            #标注文件对应的图片
             tempImageName = name.split('.')[0] + '.jpg'
             files_dict[str(image_id)] = dict(fname=tempImageName, type=2)
             print("files_dict:",files_dict)
-            
-            
             
             img = cv2.imread(image_path+'/'+tempImageName)  #读取图片信息
             print(image_path+'/'+tempImageName)
