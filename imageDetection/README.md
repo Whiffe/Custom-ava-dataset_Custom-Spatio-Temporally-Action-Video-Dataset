@@ -6,6 +6,7 @@ imageDetection这个文件夹作用在于制作课堂学生检测数据集，包
 裁剪的视频存放在：'../Dataset/video_crop' 文件夹下面<br>
 裁剪的视频取名：1000101，前2位数（10～99）代表视频大类，中间3位数（001～999）代表该大类视频下收集的各个视频，最后2位数（01～99）代表某一视频裁剪的编号。<br><br>
 视频抽帧存放在： '../Dataset/frames'<br>
+<br>
 
 
 # 1 各个文件的作用
@@ -14,3 +15,11 @@ via3_tool.py是via官方文档，来自：[JN-OpenLib-mmaction2](https://github.
 
 ## yolo2via.py
 yolo2via.py的作用是将yolov5的检测标签转化为via所能识别的格式
+
+## cutVideos.sh
+cutVideos.sh的作用是将videos文件夹下的视频按照cutVideos.txt的内容裁剪位多个15秒的视频，并将裁剪的视频放在video_crop文件夹下。
+## cutVideos.txt
+cutVideos.txt中存储了视频名及视频裁剪的起始点，如：10002.mp4 1340 2165 2710 2746，代表视频10002.mp4从第1340秒、第2165秒、第2710秒、第2746秒开始裁剪，裁剪长度为15秒，裁剪长度为15秒。
+
+## chooseVideoFrame.py
+
