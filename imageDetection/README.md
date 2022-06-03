@@ -21,5 +21,8 @@ cutVideos.sh的作用是将videos文件夹下的视频按照cutVideos.txt的内�
 ## cutVideos.txt
 cutVideos.txt中存储了视频名及视频裁剪的起始点，如：10002.mp4 1340 2165 2710 2746，代表视频10002.mp4从第1340秒、第2165秒、第2710秒、第2746秒开始裁剪，裁剪长度为15秒，裁剪长度为15秒。
 
-## chooseVideoFrame.py
+## cut_frames.sh
+cut_frames.sh的作用是将每一个裁剪的视频抽帧，然后以每一个视频对应一个文件夹，该文件夹存放该视频抽帧图片。
 
+## chooseVideoFrame.py
+chooseVideoFrame.py的作用是从每一个视频帧文件夹中选择一张（默认中间的一张），作为课堂学生目标检测的数据集。
