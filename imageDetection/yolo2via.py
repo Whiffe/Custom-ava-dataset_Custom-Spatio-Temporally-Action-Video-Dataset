@@ -15,14 +15,14 @@ parser.add_argument('--image_dir', default='./chooseVideoFrame',type=str, help="
 arg = parser.parse_args()
 
 #坐标格式转化 xywh代表：中心点与宽长，xyxy代表左上角点与右下角点
-def xywh2xyxy(x):
+def xywh2xyxy(box):
     # Convert nx4 boxes from [x, y, w, h] to [x1, y1, x2, y2] where xy1=top-left, xy2=bottom-right
-    y = x.clone() if isinstance(x, torch.Tensor) else np.copy(x)
-    y[:, 0] = x[:, 0] - x[:, 2] / 2  # top left x
-    y[:, 1] = x[:, 1] - x[:, 3] / 2  # top left y
-    y[:, 2] = x[:, 0] + x[:, 2] / 2  # bottom right x
-    y[:, 3] = x[:, 1] + x[:, 3] / 2  # bottom right y
-    return y
+    temp = box.copy()
+    temp[0] = float(box[0]) - float(box[2]) / 2  # top left x
+    temp[1] = float(box[1]) - float(box[3]) / 2  # top left y
+    temp[2] = float(box[0]) + float(box[2]) / 2 # bottom right x
+    temp[3] = float(box[1]) + float(box[3]) / 2  # bottom right y
+    return temp
 
 #最后的via产生的标注文件，viaDetectionPath为存放标注文件的路径
 viaDetectionPath = arg.image_dir + '/' + 'detection.json'
@@ -61,8 +61,8 @@ for root, dirs, files in os.walk(arg.yoloLabel_dir, topdown=False):
             files_dict[str(image_id)] = dict(fname=tempImageName, type=2)
             print("files_dict:",files_dict)
             
-            img = cv2.imread(image_path+'/'+tempImageName)  #读取图片信息
-            print(image_path+'/'+tempImageName)
+            img = cv2.imread(arg.image_dir+'/'+tempImageName)  #读取图片信息
+            print(arg.image_dir+'/'+tempImageName)
             sp = img.shape #[高|宽|像素值由三种原色构成]
             img_H = sp[0]
             img_W = sp[1]
