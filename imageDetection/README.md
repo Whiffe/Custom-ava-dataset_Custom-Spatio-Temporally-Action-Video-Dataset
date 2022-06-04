@@ -26,3 +26,6 @@ cut_frames.sh的作用是将每一个裁剪的视频抽帧，然后以每一个�
 
 ## chooseVideoFrame.py
 chooseVideoFrame.py的作用是从每一个视频帧文件夹中选择一张（默认中间的一张），作为课堂学生目标检测的数据集。
+
+## yolo2via.py
+yolo2via.py的作用是将yoloV5的检测结果转化为via可以识别使用的格式
