@@ -4,12 +4,16 @@ import os
 import random
 import argparse
 
+
+
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--anno_dir', default='./chooseVideoFrame/detection2.json',type=str, help="anno_dir is the annotation file after relabeling")
 parser.add_argument('--img_dir', default='./chooseVideoFrame/',type=str, help="img_dir is the image position")
 parser.add_argument('--newLabels_dir', default='./chooseVideoFrameYolov5/yolov5CusDataset/labels/',type=str, help="newLabelsPath is the storage for: the re-labeled ( detection2.json) file of via, the refactored multiple txt")
 parser.add_argument('--newImages_dir', default='./chooseVideoFrameYolov5/yolov5CusDataset/images/',type=str, help="newImagesPath is the location where the image will be repositioned")
+
+arg = parser.parse_args()
 
 # 训练：测试：验证=6:2:2
 ratio_train=0.8
@@ -71,4 +75,3 @@ for img_id, key in enumerate(ann['file']):
     print("txtPath:",txtPath)
     with open(txtPath,"w") as f:
         f.write(txtArr)  # 自带文件关闭功能，不需要再写f.close()
-
