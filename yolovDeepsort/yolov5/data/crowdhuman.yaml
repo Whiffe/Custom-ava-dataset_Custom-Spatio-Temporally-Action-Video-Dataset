@@ -1,10 +1,10 @@
-train: /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/imageDatasetDetection/chooseVideoFrameYolov5/yolov5CusDataset/images/train
-val: /home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/imageDatasetDetection/chooseVideoFrameYolov5/yolov5CusDataset/images/val
+train: /user-data/crowdedHuman/images/train
+val: /user-data/crowdedHuman/images/val
 #test: test.txt
 
 #number of classes
-nc: 1
+nc: 2
 
 # class names
-names: ['Vbody']
+names: ['head', 'Vperson']
 
