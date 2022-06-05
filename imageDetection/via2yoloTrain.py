@@ -4,8 +4,6 @@ import os
 import random
 import argparse
 
-
-
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--anno_dir', default='./chooseVideoFrame/detection2.json',type=str, help="anno_dir is the annotation file after relabeling")
