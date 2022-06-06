@@ -5,19 +5,27 @@ import pickle
 import cv2  
 import numpy as np
 import codecs
-
 import matplotlib.pyplot as plt
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('--label_dir', default='./chooseVideoFrameYolov5/exp/labels',type=str, help="Label path for yolov5")
+parser.add_argument('--image_dir', default='./chooseVideoFrame/',type=str, help="Path of the image")
+parser.add_argument('--newExp_dir', default='./chooseVideoFrameYolov5/newExp/',type=str, help="Label path after processing")
+#labelPath = './chooseVideoFrameYolov5/exp/labels'
+arg = parser.parse_args()
 
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL
 
 #坐标格式转化 xywh代表：中心点与宽长，xyxy代表左上角点与右下角点
 def xywhToxyxy(box):
-    temp = box
+    temp = box.clone
     temp[0] = float(box[0]) - float(box[2]) / 2  # top left x
     temp[1] = float(box[1]) - float(box[3]) / 2  # top left y
-    temp[2] = float(box[0]) + float(box[2])  # bottom right x
-    temp[3] = float(box[1]) + float(box[3])  # bottom right y
-    return
+    temp[2] = float(box[0]) + float(box[2]) / 2  # bottom right x
+    temp[3] = float(box[1]) + float(box[3]) / 2  # bottom right y
+    return temp
 
 #可视化
 def VisualizeBoxPlt(box1,box2,name1,name2,title, imgTag=False, path = ''):
@@ -58,7 +66,7 @@ def compareArea(box1,box2):
 def filterAbnormalBox(headAr, abnormalBox):
     for i,lineHead in enumerate(headAr):
         headBox = [float(lineHead[1]),float(lineHead[2]),float(lineHead[3]),float(lineHead[4])]
-        xywhToxyxy(headBox)
+        headBox = xywhToxyxy(headBox)
 
         # 下面四个if判断是去除没有交集的box
         if abs(headBox[0] - abnormalBox[0]) > max(headBox[2]-headBox[0],abnormalBox[2]-abnormalBox[0]) :
@@ -165,7 +173,8 @@ def r_filter(box1, box2, headAr):
 countAll = 0
 
 # 需要筛选的检测标签数据位置
-labelPath = './chooseVideoFrameYolov5/exp/labels'
+labelPath = arg.label_dir
+
 print(labelPath)
 for root, dirs, files in os.walk(labelPath):
     if root == labelPath:
@@ -230,14 +239,10 @@ for root, dirs, files in os.walk(labelPath):
                             s_count = s_count+1
                             
                             
-                            dirImage = '/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/imageDatasetDetection/chooseVideoFrame/'
+                            dirImage = arg.image_dir
                             dirFile = filename.split('_')[0]
                             dirFileName = filename.split('.')[0]+'.jpg'
                             path = dirImage + dirFile + '/' + dirFileName
-                            
-                            
-                            
-                            
                             
                             # 当box1的面积小于等于box2时，该坐标就该删除了
                             if compareArea(box1,box2) == 1:
@@ -253,16 +258,13 @@ for root, dirs, files in os.walk(labelPath):
             print("new:",len(new_data_txt))
             print("old:",len(temp_data_txt))
             
-            newExpDir = "/home/Custom-ava-dataset_Custom-Spatio-Temporally-Action-Video-Dataset/imageDatasetDetection/chooseVideoFrameYolov5/newExp/" + filename
+            newExp = arg.newExp_dir
+            newExpDir = newExp + filename
             
             f = codecs.open(newExpDir,'w')
 
             for i in new_data_txt:
                 f.write(str(i)) 
             f.close()
-            
-            #with open(newExpDir,"w") as f:
-            #    f.write(str(new_data_txt))  # 自带文件关闭功能，不需要再写f.close()
-
 
 print("countAll:",countAll)
