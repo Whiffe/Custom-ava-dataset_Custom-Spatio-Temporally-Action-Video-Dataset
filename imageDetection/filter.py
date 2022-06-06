@@ -20,7 +20,7 @@ font = cv2.FONT_HERSHEY_COMPLEX_SMALL
 
 #坐标格式转化 xywh代表：中心点与宽长，xyxy代表左上角点与右下角点
 def xywhToxyxy(box):
-    temp = box.clone
+    temp = box.copy()
     temp[0] = float(box[0]) - float(box[2]) / 2  # top left x
     temp[1] = float(box[1]) - float(box[3]) / 2  # top left y
     temp[2] = float(box[0]) + float(box[2]) / 2  # bottom right x
