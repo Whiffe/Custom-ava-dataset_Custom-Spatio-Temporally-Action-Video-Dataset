@@ -11,6 +11,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('--yoloLabel_dir', default='./chooseVideoFrameYolov5/exp/labels',type=str, help="Label path for yolov5")
 parser.add_argument('--image_dir', default='./chooseVideoFrame',type=str, help="Path of video frames")
+parser.add_argument('--labelName_dir', default='detection.json',type=str, help="Label the file name")
 
 arg = parser.parse_args()
 
@@ -25,7 +26,7 @@ def xywh2xyxy(box):
     return temp
 
 #最后的via产生的标注文件，viaDetectionPath为存放标注文件的路径
-viaDetectionPath = arg.image_dir + '/' + 'detection.json'
+viaDetectionPath = arg.image_dir + '/' + arg.labelName_dir
 
 via3 = Via3Json(viaDetectionPath, mode='dump')
 
