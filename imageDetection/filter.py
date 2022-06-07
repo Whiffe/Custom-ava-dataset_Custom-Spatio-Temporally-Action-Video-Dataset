@@ -48,10 +48,7 @@ def VisualizeBoxPlt(box1,box2,name1,name2,title, imgTag=False, path = ''):
     image = cv2.putText(img, name2, (int(box2[2]*width),int(box2[3]*height)), font, 2, (0,255,0), 2)
     image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-    plt.title(title)
-    plt.imshow(image)
-    plt.show()
-    plt.close()
+    cv2.imwrite(path, image)
     
     
 def compareArea(box1,box2):
@@ -135,7 +132,6 @@ def r_filter(box1, box2, headAr):
     
     inter_area = (yi2 - yi1) * (xi2 - xi1)
     
-    
     if inter_area <= 0:
         return 0
     
@@ -150,12 +146,11 @@ def r_filter(box1, box2, headAr):
     r_area = inter_area/min_box_area
     
     boolHead = 0
+       
     
     
     
-    
-    if r_area>0.7:      
-        
+    if r_area>0.7:   
         #可视化
         #VisualizeBoxPlt(box1,box2,'box1','box2','1 Find boxes that may be abnormal')
         
@@ -225,14 +220,13 @@ for root, dirs, files in os.walk(labelPath):
                     
                     # 只进行身体检测框的筛选
                     if eLineData[0]=='1':
-                        
                         #提取出两个检测框的坐标
                         box1 = [float(eLineData[1]),float(eLineData[2]),float(eLineData[3]),float(eLineData[4])]
                         box2 = [float(vbodyAr[j][1]),float(vbodyAr[j][2]),float(vbodyAr[j][3]),float(vbodyAr[j][4])]
                         
                         #坐标格式转化
-                        xywhToxyxy(box1)
-                        xywhToxyxy(box2)
+                        box1 = xywhToxyxy(box1)
+                        box2 = xywhToxyxy(box2)
                         
                         filter = r_filter(box1,box2,headAr)
                         if filter > 0.7:
